@@ -7,13 +7,13 @@ from config import open_weather_token
 
 def get_weather(city, open_weather_token):
     code_to_smile = {
-        "Clear": "Ясно \U00002600",
-        "Clouds": "Облачно \U00002601",
-        "Rain": "Дождь \U00002614",
-        "Drizzle": "Дождь \U00002614",
-        "Thunderstorm": "Гроза \U000026A1",
-        "Snow": "Снег \U0001F328",
-        "Mist": "Туман \U0001F32B"
+        "Clear": "Ochiq \U00002600",
+        "Clouds": "Bulutli \U00002601",
+        "Rain": "Yomg'ir \U00002614",
+        "Drizzle": "Kuchli Yomg'ir \U00002614",
+        "Thunderstorm": "Momaqaldiroq \U000026A1",
+        "Snow": "Qor \U0001F328",
+        "Mist": "Tuman \U0001F32B"
     }
 
     try:
@@ -41,17 +41,17 @@ def get_weather(city, open_weather_token):
         )
 
         print(f"***{datetime.now().strftime('%Y-%m-%d %H:%M')}***\n"
-              f"Погода в городе: {city}\nТемпература: {cur_weather}C° {wd}\n"
-              f"Влажность: {humidity}%\nДавление: {pressure} мм.рт.ст\nВетер: {wind} м/с\n"
-              f"Восход солнца: {sunrise_timestamp}\nЗакат солнца: {sunset_timestamp}\nПродолжительность дня: {length_of_the_day}\n"
-              f"Хорошего дня!"
+              f"Shahardagi ob-havo: {city}\nTemperatura: {cur_weather}C° {wd}\n"
+              f"Namlik: {humidity}%\nBosim: {pressure} мм.рт.ст\nShamol: {wind} м/с\n"
+              f"Quyosh chiqishi: {sunrise_timestamp}\nQuyosh botishi: {sunset_timestamp}\nKunning uzunligi: {length_of_the_day}\n"
+              f"Hairli kun!"
               )
     except Exception as ex:
         print(ex)
-        print("Проверьте название города")
+        print("Shahar nomini tekshiring!")
 
 def main():
-    city = input("Введите город: ")
+    city = input("Shahar nomini: ")
     get_weather(city, open_weather_token)
 
 
