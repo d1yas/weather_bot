@@ -1,3 +1,4 @@
+import logging
 import requests
 import datetime
 from config import API_TOKEN, open_weather_token
@@ -9,6 +10,7 @@ from aiogram.utils import executor
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
+logging.basicConfig(level=logging.INFO)
 
 @dp.message_handler(commands=["start"])
 async def start_command(message: types.Message):
